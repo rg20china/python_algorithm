@@ -7,6 +7,7 @@ print("插入排序算法")
 
 #原始的未排序序列
 A = [5,7,9,2,4,1,8,0,3,41,53,74,98,12,45,75]
+print(A)
 
 starttime = datetime.datetime.now()
 # i从 第二位数字（第一位序号是0，作为第一次比较时被key比较的值）至序列最后一位之间进行循环。
@@ -23,5 +24,7 @@ for i in  range(1,len(A)):
     #  如果j=-1的时候，A[j+1]=A[0]所赋给的值已经是序列中比较下来之后，最小的一个值了。
     A[j+1] = key
 endtime = datetime.datetime.now()
-print ((endtime - starttime).microseconds,end="微秒\n" )
+
+# 通过starttime，endtime的时间之差来反映不同长度的序列使用插入排序算法的时间效率。 可以在A中增加更多数值，对比看执行时间。
+print("执行时间: %d 微秒"  %(endtime - starttime).microseconds)
 print(A)
